@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Update portfolio media index",
+      "type": "shell",
+      "command": "node scripts/generate-media-manifest.mjs",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "left": [
+    {
+      "type": "image",
+      "src": "./assets/creation/left/001.jpg"
+    }
+  ],
+  "meta-consciousness": [
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/meta-consciousness/Meta-00.jpg"
+    }
+  ],
+  "mmxx": [
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/creation/mmxx/MMXX-00.jpg"
+    }
+  ],
+  "urban-trance": [
+    {
+      "type": "image",
+      "src": "./assets/creation/urban-trance/001.jpg"
+    }
+  ],
+  "fashion": [
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/015.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/016.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/017.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/018.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/019.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/020.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/021.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fashion/022.jpg"
+    }
+  ],
+  "fine-art": [
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/015.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/016.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/017.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/018.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/019.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/020.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/021.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/022.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/023.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/fine-art/024.jpg"
+    }
+  ],
+  "life-style": [
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/015.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/016.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/017.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/018.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/019.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/020.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/021.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/022.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/023.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/024.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/025.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/026.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/027.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/028.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/029.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/030.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/031.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/032.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/033.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/034.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/035.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/036.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/037.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/038.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/039.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/040.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/041.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/042.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/043.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/044.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/life-style/045.jpg"
+    }
+  ],
+  "portrait": [
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/015.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/016.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/017.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/018.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/019.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/020.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/021.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/022.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/023.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/024.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/025.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/026.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/027.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/028.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/029.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/030.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/031.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/032.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/033.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/034.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/035.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/036.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/037.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/038.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/039.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/040.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/041.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/042.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/043.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/044.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/045.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/046.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/047.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/048.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/049.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/050.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/051.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/052.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/053.jpg"
+    }
+  ],
+  "still-life": [
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/001.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/002.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/003.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/004.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/005.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/006.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/007.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/008.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/009.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/010.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/011.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/012.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/013.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/014.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/015.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/016.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/017.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/018.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/019.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/020.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/021.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/022.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/023.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/024.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/025.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/026.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/027.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/028.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/029.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/030.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/031.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/032.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/033.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/034.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/035.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/036.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/037.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/still-life/038.jpg"
+    }
+  ]
+}
