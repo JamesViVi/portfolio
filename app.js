@@ -16,11 +16,15 @@ function renderChrome() {
   header.innerHTML = `
     <a class="brand" href="${href('')}" aria-label="${site.name}，回到首頁">
       <img class="logo-desktop" src="./assets/logo1.png" alt="${site.name}">
-      <img class="logo-mobile" src="./assets/logo2.png" alt="${site.name}">
+      <img class="logo-mobile" src="./assets/logo1.png" alt="${site.name}">
       <span>${site.name}</span>
       <small>${site.role}</small>
     </a>
-    <button class="menu-toggle" aria-label="開啟導覽選單" aria-expanded="false">Menu</button>
+    <button class="menu-toggle" aria-label="開啟導覽選單" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
     <nav aria-label="主要導覽">
       ${menu('Creation', 'creation')}
       ${menu('Production', 'production')}
@@ -41,6 +45,22 @@ function renderChrome() {
       header.classList.remove('menu-open');
       button.setAttribute('aria-expanded', 'false');
       link.blur();
+    });
+  });
+
+  // 修正點 1 & 2：攔截 Creation 與 Production 父層點擊不導向空白頁面，並在平板/手機點擊時切換/關閉子選單
+  header.querySelectorAll('.nav-menu').forEach(menuGroup => {
+    const parentLink = menuGroup.querySelector('.nav-parent');
+    parentLink.addEventListener('click', (e) => {
+      // 判斷是否為觸控裝置或行動版尺寸
+      if (window.matchMedia('(max-width: 1024px)').pointer === 'coarse' || window.innerWidth <= 1024) {
+        e.preventDefault();
+        const isOpen = menuGroup.classList.toggle('submenu-open');
+        // 關閉其他同級選單
+        header.querySelectorAll('.nav-menu').forEach(other => {
+          if (other !== menuGroup) other.classList.remove('submenu-open');
+        });
+      }
     });
   });
 }
@@ -93,7 +113,10 @@ function projectPage(slug) {
   else if (project.layout === 'masonry') content = `<div class="masonry">${photos.map((item, i) => `<button class="media-button" data-index="${i}"><img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy"></button>`).join('')}</div>`;
   else if (project.layout === 'slider') {
     content = `<div class="slider" data-slider><button class="slide-control previous" aria-label="上一張">←</button><div class="slide-track" data-track>${photos.map((item, i) => `<figure class="slide"><img src="${item.src}" alt="${project.title} ${i + 1}"></figure>`).join('')}</div><button class="slide-control next" aria-label="下一張">→</button></div>`;
-  } else content = `<div class="storyboard ${videos.length > 1 ? 'video-gallery' : ''}">${videos.map(item => item.type === 'youtube' ? videoEmbed(item.src) : `<video src="${item.src}" controls preload="metadata"></video>`).join('')}${photos.map((item, i) => `<img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy">`).join('')}</div>`;
+  } else {
+    // 修正點 6：針對影片數量較多的頁面（如 commercial-film），改用分批載入或原生 loading="lazy" 避免手機一次載入過多 iframe 當機
+    content = `<div class="storyboard ${videos.length > 1 ? 'video-gallery' : ''}">${videos.map((item, i) => item.type === 'youtube' ? videoEmbed(item.src) : `<video src="${item.src}" controls preload="none" loading="lazy"></video>`).join('')}${photos.map((item, i) => `<img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy">`).join('')}</div>`;
+  }
   const description = project.description?.length ? `<section class="project-description">${project.description.map(text => `<p>${text}</p>`).join('')}</section>` : '';
   app.innerHTML = `<article class="project project-${project.layout}"><header class="project-heading"><p class="eyebrow">${project.category}</p><h1>${project.title}</h1>${project.year ? `<p>${project.year}</p>` : ''}${description}</header>${content}</article>`;
   if (project.layout === 'slider' && photos.length) setupSlider();
