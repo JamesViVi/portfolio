@@ -3,7 +3,7 @@ export const siteConfig = {
   role: 'Visual Artist, Photographer, D.P.',
   educationUrl: 'https://jamesvivi.github.io/jamesgaze/index.html',
   email: 'james.shujun@gmail.com',
-  phone: '0930 281 150',
+  phone: ' ',
   social: {
     instagram: 'https://www.instagram.com/jamesgazetw/',
     facebook: 'https://www.facebook.com/shujun.wang1/',
