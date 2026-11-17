@@ -59,10 +59,10 @@
 .project-heading{margin-bottom:clamp(3rem,7vh,7rem)}
 .project-heading>p:last-child{margin:.9rem 0 0;color:var(--muted);font-size:11px;letter-spacing:.15em}
 
-/* 完美修復 iOS / Mac 跨裝置瀑布流對齊與錯位問題（改用 Grid 欄位多列對齊） */
-.masonry{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:1.3rem;align-items:start;width:100%;box-sizing:border-box}
-.media-button{padding:0;margin:0;border:0;background:none;display:block;width:100%;cursor:zoom-in}
-.media-button img{display:block;width:100%;height:auto;object-fit:contain}
+/* 經典有韻律感的多欄瀑布流（搭配 iOS 支援優化） */
+.masonry{columns:3 20rem;column-gap:1.3rem;width:100%;transform:translateZ(0)}
+.media-button{padding:0;margin:0 0 1.3rem;border:0;background:none;display:block;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid;cursor:zoom-in}
+.media-button img{display:block;width:100%;height:auto}
 
 .storyboard{width:min(100%,1000px);margin:auto;display:grid;gap:clamp(2rem,7vw,8rem)}
 .storyboard img,.storyboard video{width:100%;max-height:90svh;object-fit:contain;background:#c8cdd0}
@@ -163,8 +163,9 @@
   
   .listing h1,.text-page h1,.project-heading h1,.not-found h1{font-size:clamp(2.4rem, 8.5vw, 3.8rem)!important;line-height:0.95!important}
   
-  /* 平板與手機版瀑布流改為 2 欄整齊網格 */
-  .masonry{grid-template-columns:repeat(2, minmax(0, 1fr));gap:.8rem}
+  /* 恢復平板與手機上好看且錯落有致的 2 欄多欄瀑布流 */
+  .masonry{columns:2;column-gap:.8rem}
+  .media-button{margin-bottom:.8rem}
   
   .slider{padding:0 1.8rem!important}
   .slide-track{gap:0.5rem}
