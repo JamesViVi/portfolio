@@ -39,27 +39,34 @@ function renderChrome() {
     button.setAttribute('aria-expanded', isOpen);
   });
 
-  // 點擊子選單項目後，自動關閉手機版選單並讓 hover 狀態重置
+  // 點擊任何子選單項目後，強制關閉所有選單與 hover 狀態（解決平板點擊後子目錄殘留問題）
   header.querySelectorAll('.nav-submenu a').forEach(link => {
     link.addEventListener('click', () => {
       header.classList.remove('menu-open');
       button.setAttribute('aria-expanded', 'false');
+      header.querySelectorAll('.nav-menu').forEach(m => m.classList.remove('submenu-open'));
       link.blur();
     });
   });
 
-  // 修正點 1 & 2：攔截 Creation 與 Production 父層點擊不導向空白頁面，並在平板/手機點擊時切換/關閉子選單
+  // 點擊空白處時也自動關閉平板的展開選單
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+      header.querySelectorAll('.nav-menu').forEach(m => m.classList.remove('submenu-open'));
+    }
+  });
+
+  // 平板/觸控裝置點擊父層展開/收合子目錄
   header.querySelectorAll('.nav-menu').forEach(menuGroup => {
     const parentLink = menuGroup.querySelector('.nav-parent');
     parentLink.addEventListener('click', (e) => {
-      // 判斷是否為觸控裝置或行動版尺寸
       if (window.matchMedia('(max-width: 1024px)').pointer === 'coarse' || window.innerWidth <= 1024) {
         e.preventDefault();
-        const isOpen = menuGroup.classList.toggle('submenu-open');
-        // 關閉其他同級選單
-        header.querySelectorAll('.nav-menu').forEach(other => {
-          if (other !== menuGroup) other.classList.remove('submenu-open');
-        });
+        const isOpen = menuGroup.classList.contains('submenu-open');
+        header.querySelectorAll('.nav-menu').forEach(other => other.classList.remove('submenu-open'));
+        if (!isOpen) {
+          menuGroup.classList.add('submenu-open');
+        }
       }
     });
   });
@@ -114,7 +121,6 @@ function projectPage(slug) {
   else if (project.layout === 'slider') {
     content = `<div class="slider" data-slider><button class="slide-control previous" aria-label="上一張">←</button><div class="slide-track" data-track>${photos.map((item, i) => `<figure class="slide"><img src="${item.src}" alt="${project.title} ${i + 1}"></figure>`).join('')}</div><button class="slide-control next" aria-label="下一張">→</button></div>`;
   } else {
-    // 修正點 6：針對影片數量較多的頁面（如 commercial-film），改用分批載入或原生 loading="lazy" 避免手機一次載入過多 iframe 當機
     content = `<div class="storyboard ${videos.length > 1 ? 'video-gallery' : ''}">${videos.map((item, i) => item.type === 'youtube' ? videoEmbed(item.src) : `<video src="${item.src}" controls preload="none" loading="lazy"></video>`).join('')}${photos.map((item, i) => `<img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy">`).join('')}</div>`;
   }
   const description = project.description?.length ? `<section class="project-description">${project.description.map(text => `<p>${text}</p>`).join('')}</section>` : '';
@@ -155,7 +161,7 @@ function about() {
         <p class="about-role">VISUAL ARTIST + PHOTOGRAPHER + D.P. + INSTRUCTOR<br>BASED IN TAIPEI</p>
         <div class="about-body">
           <p>王書駿是台灣知名攝影師，以獨特的人文情感和黑白攝影風格聞名，專注於捕捉光影結構和人物情感；作品帶有沈靜、古典與抽象美感. 他的創作常運用二元論、矛盾修辭和影像的弔詭性，探討生命無常與時光消逝等主題.</p>
-          <p>在商業領域，他擅長肖像、靜物攝影及廣告影片製作，並在廣告拍攝與內容行銷方面有豐富經驗. 作為攝影教育工作者，他在視丘攝影藝術學院開設課程，並在多所大學和企業開辦講座和工作坊，其善於啟發學生創造力和思維方式，幫助他們從生活經驗中尋找攝影靈感.</p>
+          <p>在商業領域，他擅長肖像, 靜物攝影及廣告影片製作，並在廣告拍攝與內容行銷方面有豐富經驗. 作為攝影教育工作者，他在視丘攝影藝術學院開設課程，並在多所大學和企業開辦講座和工作坊，其善於啟發學生創造力和思維方式，幫助他們從生活經驗中尋找攝影靈感.</p>
         </div>
       </div>
     </section>
