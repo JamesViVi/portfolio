@@ -10,12 +10,16 @@ try { media = await (await fetch('./data/media-manifest.json')).json(); } catch 
 
 const route = () => location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
 const href = path => `#/${path}`;
-const title = slug => site.projects[slug]?.title || slug;
 const projectList = category => site.sections[category].map(slug => ({ slug, ...site.projects[slug] }));
 
 function renderChrome() {
   header.innerHTML = `
-    <a class="brand" href="${href('')}" aria-label="${site.name}，回到首頁"><img src="./assets/logo.png" alt="${site.name}" onerror="this.remove()"><span>${site.name}</span><small>${site.role}</small></a>
+    <a class="brand" href="${href('')}" aria-label="${site.name}，回到首頁">
+      <img class="logo-desktop" src="./assets/logo1.png" alt="${site.name}">
+      <img class="logo-mobile" src="./assets/logo2.png" alt="${site.name}">
+      <span>${site.name}</span>
+      <small>${site.role}</small>
+    </a>
     <button class="menu-toggle" aria-label="開啟導覽選單" aria-expanded="false">Menu</button>
     <nav aria-label="主要導覽">
       ${menu('Creation', 'creation')}
@@ -29,6 +33,15 @@ function renderChrome() {
   button.addEventListener('click', () => {
     const isOpen = header.classList.toggle('menu-open');
     button.setAttribute('aria-expanded', isOpen);
+  });
+
+  // 點擊子選單項目後，自動關閉手機版選單並讓 hover 狀態重置
+  header.querySelectorAll('.nav-submenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('menu-open');
+      button.setAttribute('aria-expanded', 'false');
+      link.blur();
+    });
   });
 }
 
@@ -109,9 +122,49 @@ function setupLightbox(items, projectTitle) {
   dialog.onclick = event => { if (event.target === dialog || event.target.matches('.close')) dialog.close(); if (event.target.matches('.previous')) { current = (current - 1 + items.length) % items.length; draw(); } if (event.target.matches('.next')) { current = (current + 1) % items.length; draw(); } };
 }
 
-function about() { app.innerHTML = `<article class="text-page about-page"><header class="about-heading"><p class="eyebrow">About</p><h1>About Me</h1></header><section class="about-intro"><img class="about-portrait" src="./assets/about.jpg" alt="王書駿" onerror="this.remove()"><div class="about-copy"><h2>王 書駿　WANG SHU JUN</h2><p class="about-role">VISUAL ARTIST + PHOTOGRAPHER + D.P. + INSTRUCTOR<br>BASED IN TAIPEI</p><div class="about-body"><p>王書駿是台灣知名攝影師，以獨特的人文情感和黑白攝影風格聞名，專注於捕捉光影結構和人物情感；作品帶有沈靜、古典與抽象美感。他的創作常運用二元論、矛盾修辭和影像的弔詭性，探討生命無常與時光消逝等主題。</p><p>在商業領域，他擅長肖像、靜物攝影及廣告影片製作，並在廣告拍攝與內容行銷方面有豐富經驗。作為攝影教育工作者，亦於視丘攝影藝術學院、多所大學及企業開設課程、講座與工作坊。</p></div></div></section><section class="bio-list"><h2>現任</h2><p>2022 至今　視丘攝影藝術學院《攝影指導養成所》講師<br>2020 至今　視丘攝影藝術學院《林布蘭與現代商業人像採光》講師<br>2019 至今　自由接案攝影師</p><h2>獲獎</h2><p>2022 IPA, Official Selection<br>2022 PX3, Honorable Mention<br>2022 Hidden Stories Beyond Addresses Challenge, 3rd Prize, Best Story<br>2019 麥味登微電影劇情篇 銀盤獎</p><h2>聯展</h2><p>2005 Fnac《24小時城市數位攝影馬拉松》, Fnac 藝廊<br>2000《毒影》, 中央大學藝文中心</p></section></article>`; }
-function service() { const steps=[['01','需求確認','了解預計製作內容、規模、類型、數量、露出位置與預算範圍。'],['02','初步提案','以參考資料建立初步共識，確認製作方向與合作意願。'],['03','正式提案與報價','確立詳細計畫內容，建立合約與報價單。'],['04','製作階段','前期畫面設計、道具、時程與場地；中期拍攝、燈光與收音；後期備檔、選片、修圖、調色與剪輯。'],['05','結案','依案件類型，以雲端硬碟或實體硬碟交付檔案。']]; app.innerHTML = `<article class="text-page service-page"><p class="eyebrow">Service</p><h1>Service Process</h1><ol class="process">${steps.map(step=>`<li><b>${step[0]}</b><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol><p class="contact-intro">歡迎各種形式合作與委託。</p><a class="email-link" href="mailto:${site.email}">${site.email} <i>↗</i></a></article>`; }
+function about() { 
+  app.innerHTML = `<article class="text-page about-page">
+    <header class="about-heading"><p class="eyebrow">About</p><h1>About Me</h1></header>
+    <section class="about-intro">
+      <img class="about-portrait" src="./assets/about.jpg" alt="王書駿" onerror="this.remove()">
+      <div class="about-copy">
+        <h2>王 書駿　WANG SHU JUN</h2>
+        <p class="about-role">VISUAL ARTIST + PHOTOGRAPHER + D.P. + INSTRUCTOR<br>BASED IN TAIPEI</p>
+        <div class="about-body">
+          <p>王書駿是台灣知名攝影師，以獨特的人文情感和黑白攝影風格聞名，專注於捕捉光影結構和人物情感；作品帶有沈靜、古典與抽象美感. 他的創作常運用二元論、矛盾修辭和影像的弔詭性，探討生命無常與時光消逝等主題.</p>
+          <p>在商業領域，他擅長肖像、靜物攝影及廣告影片製作，並在廣告拍攝與內容行銷方面有豐富經驗. 作為攝影教育工作者，他在視丘攝影藝術學院開設課程，並在多所大學和企業開辦講座和工作坊，其善於啟發學生創造力和思維方式，幫助他們從生活經驗中尋找攝影靈感.</p>
+        </div>
+      </div>
+    </section>
+    <section class="bio-list">
+      <h2>現任</h2>
+      <p>2022至今　視丘攝影藝術學院《攝影指導養成所》講師<br>2020至今　視丘攝影藝術學院《林布蘭與現代商業人像採光》講師<br>2019至今　自由接案攝影師</p>
+      <h2>獲獎</h2>
+      <p>2022 ipa, Official Selection<br>2022 PX3, Honorable Mention<br>2022 Hidden Stories Beyond Addresses Challenge, 3rd Prize, Best Story<br>2022 Hidden Stories Beyond Addresses Challenge, Three Honorable Mention, Best Photo<br>2019 麥味登微電影劇情篇 銀盤獎<br>2005 Fnac《24小時城市數位攝影馬拉松》攝影比賽 北區首獎</p>
+      <h2>聯展</h2>
+      <p>2005 Fnac《24小時城市數位攝影馬拉松》, Fnac藝廊<br>2000《毒影》, 中央大學藝文中心</p>
+    </section>
+  </article>`; 
+}
+
+function service() { 
+  const steps=[['01','需求確認','了解預計製作內容、規模、類型、數量、露出位置與預算範圍.'],['02','初步提案','以參考資料建立初步共識，確認製作方向與合作意願.'],['03','正式提案與報價','確立詳細計畫內容，建立合約與報價單.'],['04','製作階段','前期畫面設計、道具、時程與場地；中期拍攝、燈光與收音；後期備檔、選片、修圖、調色與剪輯.'],['05','結案','依案件類型，以雲端硬碟或實體硬碟交付檔案.']]; 
+  app.innerHTML = `<article class="text-page service-page"><p class="eyebrow">Service</p><h1>Service Process</h1><ol class="process">${steps.map(step=>`<li><b>${step[0]}</b><div><strong>${step[1]}</strong><p>${step[2]}</p></div></li>`).join('')}</ol><p class="contact-intro">歡迎各種形式合作與委託.</p><a class="email-link" href="mailto:${site.email}">${site.email} <i>↗</i></a></article>`; 
+}
+
 function notFound() { app.innerHTML = `<section class="not-found"><h1>Page not found</h1><a href="${href('')}">回到首頁</a></section>`; }
-function render() { document.onkeydown = null; const [section, slug] = route(); if (!section) home(); else if ((section === 'creation' || section === 'production') && !slug) indexPage(section); else if ((section === 'creation' || section === 'production') && slug) projectPage(slug); else if (section === 'about') about(); else if (section === 'service') service(); else notFound(); header.classList.remove('menu-open'); window.scrollTo({ top: 0, behavior: 'instant' }); }
+
+function render() { 
+  document.onkeydown = null; 
+  const [section, slug] = route(); 
+  if (!section) home(); 
+  else if ((section === 'creation' || section === 'production') && !slug) indexPage(section); 
+  else if ((section === 'creation' || section === 'production') && slug) projectPage(slug); 
+  else if (section === 'about') about(); 
+  else if (section === 'service') service(); 
+  else notFound(); 
+  header.classList.remove('menu-open'); 
+  window.scrollTo({ top: 0, behavior: 'instant' }); 
+}
 
 renderChrome(); window.addEventListener('hashchange', render); render();
