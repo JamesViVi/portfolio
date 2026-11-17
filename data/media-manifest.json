@@ -701,6 +701,74 @@
     {
       "type": "image",
       "src": "./assets/production/portrait/053.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/054.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/055.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/056.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/057.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/058.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/059.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/060.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/061.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/062.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/063.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/064.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/065.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/066.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/067.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/068.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/069.jpg"
+    },
+    {
+      "type": "image",
+      "src": "./assets/production/portrait/070.jpg"
     }
   ],
   "still-life": [
