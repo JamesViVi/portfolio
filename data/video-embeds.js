@@ -41,6 +41,7 @@ export const videoEmbeds = {
     'https://youtu.be/Rjexqtyk_go',
     'https://youtu.be/Pmd-FtWNIL4',
     'https://youtu.be/ycGEiwaXVOk',
+    'https://youtu.be/hrnPjBhcJHk',
     
   ],
   'narrative-mv': [
