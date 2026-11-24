@@ -60,8 +60,9 @@
 .project-heading>p:last-child{margin:.9rem 0 0;color:var(--muted);font-size:11px;letter-spacing:.15em}
 
 /* 經典有韻律感的多欄瀑布流（搭配 iOS 支援優化） */
-.masonry{columns:3 20rem;column-gap:1.3rem;width:100%;transform:translateZ(0)}
-.media-button{padding:0;margin:0 0 1.3rem;border:0;background:none;display:block;width:100%;break-inside:avoid;-webkit-column-break-inside:avoid;cursor:zoom-in}
+.masonry{columns:3 20rem;column-gap:1.3rem;width:100%}
+.masonry-item{display:block;margin:0;padding:0 0 1.3rem;break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid}
+.media-button{padding:0;margin:0;border:0;background:none;display:block;width:100%;cursor:zoom-in}
 .media-button img{display:block;width:100%;height:auto}
 
 .storyboard{width:min(100%,1000px);margin:auto;display:grid;gap:clamp(2rem,7vw,8rem)}
@@ -72,6 +73,11 @@
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-gallery{width:min(100%,1500px)!important;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:clamp(.9rem,1.4vw,1.5rem)!important}
 .video-gallery .video{width:100%}
+.video-facade{position:absolute;inset:0;width:100%;height:100%;padding:0;margin:0;border:0;background:#000;cursor:pointer;overflow:hidden;display:block}
+.video-facade img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .35s}
+.video-facade:hover img{filter:grayscale(.15)}
+.video-play{position:absolute;left:50%;top:50%;width:4rem;height:4rem;margin:-2rem 0 0 -2rem;border-radius:50%;background:rgba(238,238,238,.92);box-shadow:0 .2rem .8rem rgba(0,0,0,.25)}
+.video-play::after{content:"";position:absolute;left:50%;top:50%;margin:-.6rem 0 0 -.35rem;border-style:solid;border-width:.6rem 0 .6rem 1rem;border-color:transparent transparent transparent #111}
 .video-gallery>img{grid-column:1/-1}
 
 /* 輪播滑軌與箭頭 */
@@ -114,7 +120,8 @@
 .nav-menu{position:relative;display:inline-flex;align-items:center}
 .nav-menu summary{list-style:none;cursor:pointer}
 .nav-menu>.nav-submenu{display:none!important;position:absolute!important;top:100%!important;left:-.5rem!important;min-width:11rem!important;padding:.4rem 0!important;background:#eee;border:0!important;box-shadow:none!important;z-index:30}
-.nav-menu:hover>.nav-submenu,.nav-menu:focus-within>.nav-submenu{display:block!important}
+.nav-menu.submenu-open>.nav-submenu{display:block!important}
+@media (hover:hover) and (pointer:fine){.nav-menu:hover>.nav-submenu,.nav-menu:focus-within>.nav-submenu{display:block!important}}
 .nav-menu>.nav-submenu a{display:block;padding:.3rem .5rem!important;font-size:10px;letter-spacing:.09em;text-transform:none;line-height:1.35!important}
 
 /* About 頁面樣式調整 */
@@ -135,7 +142,7 @@
 
 /* 平板與手機響應式調整 (Max-width: 1024px) */
 @media(max-width:1024px){
-  .site-header{height:5.5rem;padding:0 var(--side);position:relative;justify-content:flex-end}
+  .site-header{height:5.5rem;padding:0 var(--side);position:relative;justify-content:flex-end;backdrop-filter:none;-webkit-backdrop-filter:none}
   
   .brand{position:absolute;left:var(--side);transform:none;align-items:flex-start!important;justify-content:center!important;gap:2px!important}
   .brand .logo-desktop{display:none!important}
@@ -165,7 +172,7 @@
   
   /* 恢復平板與手機上好看且錯落有致的 2 欄多欄瀑布流 */
   .masonry{columns:2;column-gap:.8rem}
-  .media-button{margin-bottom:.8rem}
+  .masonry-item{padding-bottom:.8rem}
   
   .slider{padding:0 1.8rem!important}
   .slide-track{gap:0.5rem}

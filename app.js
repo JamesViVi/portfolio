@@ -152,9 +152,33 @@ function indexPage(category) {
     <a href="${href(`${category}/${project.slug}`)}" class="project-link"><span>${project.title}</span><i>→</i></a>`).join('')}</div></section>`;
 }
 
+// 影片：先顯示縮圖與播放鈕，點了才載入 YouTube 播放器（同時間只保留一個），
+// 避免一次載入數十個播放器造成 iPhone 記憶體不足而當機
+function youtubeId(url) {
+  return url.match(/(?:youtu\.be\/|v=|embed\/)([^?&/]+)/)?.[1];
+}
+
+function videoFacade(id) {
+  return `<button class="video-facade" type="button" data-video-id="${id}" aria-label="播放影片"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="video-play" aria-hidden="true"></span></button>`;
+}
+
 function videoEmbed(url) {
-  const id = url.match(/(?:youtu\.be\/|v=|embed\/)([^?&/]+)/)?.[1];
-  return id ? `<div class="video"><div class="video-frame"><iframe src="https://www.youtube.com/embed/${id}" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>` : '';
+  const id = youtubeId(url);
+  return id ? `<div class="video"><div class="video-frame">${videoFacade(id)}</div></div>` : '';
+}
+
+function restoreVideo(iframe) {
+  const frame = iframe.parentElement;
+  if (frame) frame.innerHTML = videoFacade(iframe.dataset.yt);
+}
+
+function activateVideo(button) {
+  const id = button.dataset.videoId;
+  const frame = button.parentElement;
+  if (!id || !frame) return;
+  app.querySelectorAll('iframe[data-yt]').forEach(restoreVideo);
+  frame.innerHTML = `<iframe data-yt="${id}" src="https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1&rel=0" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  track('video_play', { video_id: id });
 }
 
 function emptyProject(slug) {
@@ -182,7 +206,7 @@ function projectPage(slug) {
     content = mediaLoaded ? emptyProject(slug) : '';
   } else if (layout === 'masonry') {
     // 恢復你原本流暢好看的傳統多欄瀑布流，並加入自動防錯位微調
-    content = `<div class="masonry">${photos.map((item, i) => `<button class="media-button" data-index="${i}"><img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy"></button>`).join('')}</div>`;
+    content = `<div class="masonry">${photos.map((item, i) => `<div class="masonry-item"><button class="media-button" data-index="${i}"><img src="${item.src}" alt="${project.title} ${i + 1}" loading="lazy" decoding="async"${item.width && item.height ? ` width="${item.width}" height="${item.height}"` : ''}></button></div>`).join('')}</div>`;
   } else if (layout === 'slider') {
     content = `<div class="slider" data-slider><button class="slide-control previous" aria-label="上一張">←</button><div class="slide-track" data-track>${photos.map((item, i) => `<figure class="slide"><img src="${item.src}" alt="${project.title} ${i + 1}"></figure>`).join('')}</div><button class="slide-control next" aria-label="下一張">→</button></div>`;
   } else {
@@ -331,6 +355,12 @@ if (skipLink) {
     app.focus();
   });
 }
+
+// 影片縮圖被點擊時才載入播放器
+app.addEventListener('click', event => {
+  const button = event.target.closest ? event.target.closest('.video-facade') : null;
+  if (button) activateVideo(button);
+});
 
 // 點擊紀錄：Education 連結、聯絡 Email
 document.addEventListener('click', event => {
